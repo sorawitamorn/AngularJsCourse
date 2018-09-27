@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <script src="angular.min.js"></script>
+      <script src="app.js"></script>
+      <title>Demo app</title>
+  </head>
+  <body ng-app="demoApp">
+    <div ng-controller="Controller">
+       <h1> Amgular Demo </h1>
+       <div>
+         <input type="text" ng-model="name" ng-keyup="reverse();">
+         <button ng-click="switch();">Switch</button>
+       </div>
+       <div>
+         {{reversedName}}
+       </div>
+    </div>
+  </body>
+</html>
