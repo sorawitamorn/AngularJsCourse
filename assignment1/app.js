@@ -8,15 +8,15 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
   $scope.dishes = ""
   $scope.message = ""
-  $scope.messageStyle = ""
-
+  $scope.textStyle = { }
+  $scope.messageStyle = { }
   $scope.CheckIfTooMuch = function () {
     var dishesCount = GetNumberOfDishes($scope.dishes)
     var message = "Too much!";
-    var fontColor = "green";
+    var color = "green";
     if(dishesCount === 0)
     {
-      fontColor = "red";
+      color = "red";
       message = "Please enter data first";
     }
     else if (dishesCount <= 3) {
@@ -24,7 +24,8 @@ function LunchCheckController($scope) {
     }
 
     $scope.message = message;
-    $scope.messageStyle = {"color": fontColor, "border-style" : "solid", "border-color" : fontColor}
+    $scope.messageStyle = {"border-style" : "solid", "border-color" : color}
+    $scope.textStyle = { "color": color }
   }
 
 
